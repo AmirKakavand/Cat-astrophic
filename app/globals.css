@@ -2,7 +2,7 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
+/* :root {
   --foreground-rgb: 0, 0, 0;
   --background-start-rgb: 214, 219, 220;
   --background-end-rgb: 255, 255, 255;
@@ -14,17 +14,49 @@
     --background-start-rgb: 0, 0, 0;
     --background-end-rgb: 0, 0, 0;
   }
-}
+} */
 
 body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+  margin: 0;
+  padding: 0;
+  color: #F8F3EB;
+  background-color: #17171A;
 }
+
+.dots-bg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: fit-content;
+  background-image:
+    radial-gradient(#ff6b6b6c 0.5%, transparent 5%),
+    radial-gradient(#ffa5006c 0.5%, transparent 5%),
+    radial-gradient(#ffff006c 0.5%, transparent 5%),
+    radial-gradient(#00ff006c 0.5%, transparent 5%),
+    radial-gradient(#00ffff6c 0.5%, transparent 5%),
+    radial-gradient(#0000ff6c 0.5%, transparent 5%),
+    radial-gradient(#8b00ff6c 0.5%, transparent 5%);
+  background-size: 50px 50px;
+  background-position: 0 0, 25px 25px, 50px 0, 25px 50px, 0 25px, 50px 50px;
+  animation: move 7s ease-in-out infinite;
+}
+
+@keyframes move {
+  0% {
+    background-position: 0 0, 25px 25px, 50px 0, 25px 50px, 0 25px, 50px 50px;
+  }
+  100% {
+    background-position: 100px 100px, 125px 125px, 150px 100px, 125px 150px, 100px 125px, 150px 150px;
+  }
+}
+
+
+section {
+  border: 10px solid white;
+  border-radius: 255px 15px 225px 15px/15px 225px 15px 255px;
+}
+
 
 @layer utilities {
   .text-balance {
