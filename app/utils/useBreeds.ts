@@ -2,7 +2,7 @@
 import useSWR from "swr";
 import { ICatBreed } from "../types/ICatBreed";
 
-const apiKey: string = process.env.API_KEY as string;
+const apiKey: string = process.env.NEXT_PUBLIC_API_KEY as string;
 const fetcher = (url: string) => fetch(url, {headers: {"x-api-key": apiKey}}).then((res) => res.json());
 
 export const useBreeds = () => {
