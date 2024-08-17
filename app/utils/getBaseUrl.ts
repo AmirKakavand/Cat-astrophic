@@ -2,6 +2,6 @@ export const getBaseUrl = () => {
   const baseUrl =
     process.env.NODE_ENV === "development"
       ? "http://localhost:3000"
-      : "https://amirkakavand.github.io";
+      : "https://amirkakavand.github.io/Cat-astrophic";
       return baseUrl;
 };
