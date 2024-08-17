@@ -5,6 +5,7 @@ import { useBreedImageUrl } from "../utils/useBreedImageUrl";
 import Image from "next/image";
 import { useRouter } from "next/navigation";
 import Link from "next/link";
+import { getBaseUrl } from "../utils/getBaseUrl";
 
 interface IProps {
   breed: ICatBreed;
@@ -13,7 +14,7 @@ interface IProps {
 const CatCard = ({ breed }: IProps) => {
   const { breedData, isLoading, error } = useBreedImageUrl(breed.id);
   const imageUrl = breedData !== undefined ? breedData[0].url : "";
-
+  
   // const router = useRouter();
   // const handleRouting = (breedName: string) => {
   //   router.push(`/cats/${breedName}`);
@@ -21,7 +22,7 @@ const CatCard = ({ breed }: IProps) => {
 
   if (breedData && breedData.length > 0 && breedData[0].url) {
     return (
-      <Link href={"/cats/" + encodeURIComponent(breed.name)}>
+      <Link href={getBaseUrl() + "/cats/" + encodeURIComponent(breed.name)}>
       <section
         className="w-4/5 border-[#F6C448] sm:w-1/5 p-2"
         // onClick={() => handleRouting(breed.name)}
