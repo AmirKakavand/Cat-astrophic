@@ -11,8 +11,7 @@ interface IProps {
 
 const Page: React.FC<IProps> = (breed) => {
   const router = useRouter();
-  const { breedName } = router.query;
-  // console.log(breedName)
+  // const { breedName } = router.query;
   if (router.isFallback) {
     return <div>Loading...</div>;
   }
@@ -20,13 +19,14 @@ const Page: React.FC<IProps> = (breed) => {
 };
 
 export async function getStaticPaths() {
-  const paths = breedNames.map((item) => ({ params: { item } }));
+  console.log(breedNames)
+  const paths = breedNames.map((breedName) => ({ params: { breedName } }));
   return { paths, fallback: false };
 }
 
 export const getStaticProps: GetStaticProps = ({ params }) => {
   const breed = {
-    id: params?.breedName,
+    id: params?.breedName as string,
     description: "Some info about the cat breed",
   };
   return { props: { breed } };
