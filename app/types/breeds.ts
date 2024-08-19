@@ -1,4 +1,4 @@
-const breedNames = [
+export const breedNames = [
   'Abyssinian',           'Aegean',               'American Bobtail',
   'American Curl',        'American Shorthair',   'American Wirehair',
   'Arabian Mau',          'Australian Mist',      'Balinese',
@@ -24,7 +24,7 @@ const breedNames = [
   'York Chocolate'
 ]
 
-const breedIDs = [
+export const breedIDs = [
     'abys', 'aege', 'abob', 'acur', 'asho', 'awir',
     'amau', 'amis', 'bali', 'bamb', 'beng', 'birm',
     'bomb', 'bslo', 'bsho', 'bure', 'buri', 'cspa',

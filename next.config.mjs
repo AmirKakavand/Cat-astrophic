@@ -10,8 +10,8 @@ const nextConfig = {
       },
     ],
   },
-  basePath: "/Cat-astrophic",
-  assetPrefix: "/Cat-astrophic/",
+  // basePath: "/Cat-astrophic",
+  assetPrefix: "/Cat-astrophic",
 };
 
 export default nextConfig;
